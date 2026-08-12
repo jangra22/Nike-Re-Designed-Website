@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --nike-ink: #07111C;
+    --nike-blue: #1648FF;
+    --nike-lime: #C8FF3D;
+    --nike-sky: #9DC7FF;
+    --nike-paper: #F2F3EE;
+    --product-blue: #D9E7FF;
+    --product-lime: #C8FF3D;
+    --product-coral: #FF684C;
+    --border-white-10: rgba(255, 255, 255, 0.10);
+    --text-white-60: rgba(255, 255, 255, 0.60);
+  }
+
+  body {
+    background-color: var(--nike-ink);
+    color: var(--nike-paper);
+    font-family: 'Space Grotesk', sans-serif;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6, .font-display {
+    font-family: 'Barlow Condensed', sans-serif;
+  }
+}
+
+.font-display {
+  font-family: 'Barlow Condensed', sans-serif;
+}
+
+.font-body {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+/* Ticker marquee animation */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 22s linear infinite;
+}
+
+/* Floating cue animation */
+@keyframes floatCue {
+  0%, 100% {
+    transform: translateY(0px) rotate(-4deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(2deg);
+  }
+}
+
+.animate-float-cue {
+  animation: floatCue 3s ease-in-out infinite;
+}
+
+/* Focus visible styles */
+*:focus-visible {
+  outline: 2px solid #C8FF3D;
+  outline-offset: 3px;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #07111C;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #C8FF3D;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee,
+  .animate-float-cue {
+    animation: none !important;
+  }
+  * {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

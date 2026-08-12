@@ -1,0 +1,6 @@
+{
+  "name": "Nike India",
+  "description": "Dark editorial Nike India campaign homepage for a Gen-Z audience featuring custom product drops, member offers, city customization, and high-impact motion.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
